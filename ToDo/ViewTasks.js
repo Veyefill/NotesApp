@@ -40,12 +40,6 @@ export default function ViewTasks() {
         updateTaskList();
     }, []);
 
-    useEffect(() => {
-        // Fetch subtasks and update subtaskStatus
-        const initialStatus = subtasks.map(() => false); // Array of 'false' indicating unchecked
-        setSubtaskStatus(initialStatus);
-    }, [subtasks]);
-
     // Saving a Task
     const saveTask = () => {
         db.transaction(tx => {
